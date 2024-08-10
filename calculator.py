@@ -17,10 +17,10 @@ def sub(a, b):
     return a - b
 
 # Multiply function
-# a -- multiplicand
-# b -- multiplier
-#def mult(a, b):
-#    return a * b
+ #a -- multiplicand
+ #b -- multiplier
+def mult(a, b):
+    return a * b
 
 # Divide function
 # a -- dividend
