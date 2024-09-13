@@ -10,9 +10,13 @@ def add(a, b):
 def sub(a, b):
     return a - b
 
-# Multiply function
+# Multiply function with error handling to accept only integers
 def mult(a, b):
-    return a * b
+    if isinstance(a, int) and isinstance(b, int):
+        return a * b
+    else:
+        print("Error: Both arguments must be integers.")
+        return None
 
 # Divide function
 def div(a, b):
@@ -43,7 +47,7 @@ while True:
         a = int(a)
         b = int(b)
     except ValueError:
-        print("Invalid number argument...")
+        print("Invalid number argument... Only integers are allowed.")
         continue
 
     # decide function
@@ -52,7 +56,9 @@ while True:
     elif op == "-":
         print("Difference: ", sub(a, b))
     elif op == "*":
-        print("Product: ", mult(a, b))
+        result = mult(a, b)
+        if result is not None:
+            print("Product: ", result)
     elif op == "/":
         print("Quotient: ", div(a, b))
     elif op == "square":
